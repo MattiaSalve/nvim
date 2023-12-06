@@ -1,4 +1,22 @@
 local lsp = require("lsp-zero")
+<<<<<<< HEAD
+=======
+local on_attach = lsp.on_attach(function(client, bufnr)
+   local opts = {buffer = bufnr, remap = false}
+   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+   vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+   vim.keymap.set("n", "<leader>vd", function() vim.lsp.buf.open_float() end, opts)
+   vim.keymap.set("n", "[d", function() vim.lsp.buf.goto_next() end, opts)
+   vim.keymap.set("n", "]d", function() vim.lsp.buf.goto_prev() end, opts)
+   vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+end)
+
+local cmp_format = require('lsp-zero').cmp_format()
+local lspconfig = require "lspconfig"
+>>>>>>> ec34528 (added origin)
 local luasnip = require "luasnip"
 
 lsp.preset("recommended")
@@ -6,7 +24,10 @@ lsp.preset("recommended")
 require "mason".setup({})
 require "mason-lspconfig".setup({
    ensure_installed =  {
+<<<<<<< HEAD
       "ltex",
+=======
+>>>>>>> ec34528 (added origin)
       "lua_ls",
       "pylsp",
       "clangd",
@@ -15,8 +36,14 @@ require "mason-lspconfig".setup({
     lsp.default_setup,
     lua_ls = function()
       local lua_opts = lsp.nvim_lua_ls()
+<<<<<<< HEAD
       require('lspconfig').lua_ls.setup(lua_opts)
     end,}
+=======
+   require('lspconfig').lua_ls.setup(lua_opts)
+    end,
+   }
+>>>>>>> ec34528 (added origin)
 })
 
 local cmp = require("cmp")
@@ -35,11 +62,19 @@ cmp.setup({
       end,
    },
    sources = cmp.config.sources({
+<<<<<<< HEAD
       { name = "luasnip" },
       { name = "nvim_lsp" },
       { name = "buffer" },
       { name = "nvim_lua" },
       { name = "path" },
+=======
+      { name = "nvim_lsp" },
+      { name = "luasnip" },
+      { name = "buffer" },
+      { name = "nvim_lua" },
+   { name = "path" },
+>>>>>>> ec34528 (added origin)
    }),
    mapping = {
       ["<C-p>"] = cmp.mapping.select_prev_item(),
@@ -69,18 +104,29 @@ cmp.setup({
          end
       end, { "i", "s" }),
    },
+<<<<<<< HEAD
+=======
+   formatting = cmp_format,
+>>>>>>> ec34528 (added origin)
 })
 
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+<<<<<<< HEAD
 require('lspconfig')["lua_ls"].setup {
    capabilities = capabilities
 }
+=======
+
+require('lspconfig')["lua_ls"].setup {capabilities = capabilities, on_attach = on_attach}
+require('lspconfig')["clangd"].setup {capabilities = capabilities, on_attach = on_attach}
+>>>>>>> ec34528 (added origin)
 
 lsp.set_preferences({
    sign_icons = {}
 })
 
+<<<<<<< HEAD
 lsp.on_attach(function(client, bufnr)
    local opts = {buffer = bufnr, remap = false}
 
@@ -96,5 +142,7 @@ lsp.on_attach(function(client, bufnr)
    vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
+=======
+>>>>>>> ec34528 (added origin)
 lsp.setup()
 

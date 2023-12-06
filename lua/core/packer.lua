@@ -37,6 +37,10 @@ return require('packer').startup(function(use)
    use { "lervag/vimtex" }
    use { 'm4xshen/autoclose.nvim' }
    use { "tpope/vim-surround" }
+<<<<<<< HEAD
+=======
+   use { "jose-elias-alvarez/null-ls.nvim" }
+>>>>>>> ec34528 (added origin)
    use { 'vim-airline/vim-airline' }
    use {'vim-airline/vim-airline-themes'}
    use {'tpope/vim-commentary'}

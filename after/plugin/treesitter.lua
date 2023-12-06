@@ -1,6 +1,10 @@
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
+<<<<<<< HEAD
   ensure_installed = { "latex", "c", "lua", "vim", "vimdoc", "query" },
+=======
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
+>>>>>>> ec34528 (added origin)
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -25,6 +29,10 @@ require'nvim-treesitter.configs'.setup {
             return true
         end
     end,
+<<<<<<< HEAD
+=======
+    "latex",
+>>>>>>> ec34528 (added origin)
 
     additional_vim_regex_highlighting = false,
   },
