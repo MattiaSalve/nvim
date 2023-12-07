@@ -13,13 +13,8 @@ return require('packer').startup(function(use)
 	config = function() 
 		vim.cmd("colorscheme rose-pine")
 	end})
-
-	use {
-		'nvim-treesitter/nvim-treesitter',
-		run = ':TSUpdate'
-	}
+	use {'nvim-treesitter/nvim-treesitter',}
 	use {"williamboman/mason.nvim"}
-
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v3.x',
@@ -37,10 +32,8 @@ return require('packer').startup(function(use)
    use { "lervag/vimtex" }
    use { 'm4xshen/autoclose.nvim' }
    use { "tpope/vim-surround" }
-<<<<<<< HEAD
-=======
    use { "jose-elias-alvarez/null-ls.nvim" }
->>>>>>> ec34528 (added origin)
+   use { "jay-babu/mason-null-ls.nvim" }
    use { 'vim-airline/vim-airline' }
    use {'vim-airline/vim-airline-themes'}
    use {'tpope/vim-commentary'}
