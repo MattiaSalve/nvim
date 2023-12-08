@@ -8,4 +8,5 @@ set("n", "<C-j>", "<C-w>j")
 set("n", "<C-k>", "<C-w>k")
 set("n", "<C-l>", "<C-w>l")
 
-set("n", ":w", ":w | lua vim.lsp.buf.format()<CR>")
+vim.cmd [[ command! Format execute "lua vim.lsp.buf.format()" ]]
+set("n", "<leader>fo", ":Format<CR>")
