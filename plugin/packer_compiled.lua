@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/mattiasalvetti/.local/share/nvim/site/pack/packer/start/autoclose.nvim",
     url = "https://github.com/m4xshen/autoclose.nvim"
   },
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "/Users/mattiasalvetti/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/mattiasalvetti/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -124,6 +129,11 @@ _G.packer_plugins = {
     path = "/Users/mattiasalvetti/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["neoscroll.nvim"] = {
+    loaded = true,
+    path = "/Users/mattiasalvetti/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/mattiasalvetti/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -149,10 +159,20 @@ _G.packer_plugins = {
     path = "/Users/mattiasalvetti/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-ts-rainbow2"] = {
+    loaded = true,
+    path = "/Users/mattiasalvetti/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow2",
+    url = "https://github.com/HiPhish/nvim-ts-rainbow2"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/mattiasalvetti/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
+  ["obsidian.nvim"] = {
+    loaded = true,
+    path = "/Users/mattiasalvetti/.local/share/nvim/site/pack/packer/start/obsidian.nvim",
+    url = "https://github.com/epwalsh/obsidian.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,

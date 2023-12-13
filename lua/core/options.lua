@@ -1,6 +1,5 @@
 local opt = vim.opt
 
-vim.g.colorscheme = "rose-pine"
 opt.number = true
 opt.relativenumber = true
 opt.tabstop = 2
