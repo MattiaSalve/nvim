@@ -1,9 +1,8 @@
-function Color(color)
-  color = color or "rose-pine"
-  vim.cmd.colorscheme(color)
+require "rose-pine".setup {
+  variant = "moon"
+}
 
-  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-end
-
--- Color()
+require "kanagawa".setup {
+  -- available color schemes: wave, lotus, dragon
+}
+vim.cmd [[colorscheme kanagawa-dragon]]
