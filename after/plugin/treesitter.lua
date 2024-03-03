@@ -22,9 +22,4 @@ require 'nvim-treesitter.configs'.setup {
       "latex"
     },
   },
-  rainbow = {
-    enable = true,
-    query = "rainbow-parens",
-    strategy = require("ts-rainbow").strategy.global,
-  }
 }
