@@ -10,3 +10,5 @@ set("n", "<C-l>", "<C-w>l")
 
 vim.cmd [[ command! Format execute "lua vim.lsp.buf.format()" ]]
 set("n", "<leader>fo", ":Format<CR>")
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)

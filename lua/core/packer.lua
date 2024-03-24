@@ -1,4 +1,4 @@
-vim.cmd [[packadd packer.nvim]]
+-- vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
@@ -9,6 +9,7 @@ return require('packer').startup(function(use)
     }
 
     use({ "rose-pine/neovim", as = 'rose-pine' })
+    use { 'rcarriga/nvim-notify' }
     use { "nvim-treesitter/nvim-treesitter", }
     use { "williamboman/mason.nvim" }
     use {
@@ -24,7 +25,9 @@ return require('packer').startup(function(use)
         }
     }
     use { "saadparwaiz1/cmp_luasnip" }
+    use { "rshkarin/mason-nvim-lint" }
     use { "vimwiki/vimwiki" }
+    use { "mfussenegger/nvim-lint" }
     use { "lervag/vimtex" }
     use { "m4xshen/autoclose.nvim" }
     use { "tpope/vim-surround" }
@@ -38,4 +41,5 @@ return require('packer').startup(function(use)
     use { "mattn/emmet-vim" }
     use { "rebelot/kanagawa.nvim" }
     use { "NLKNguyen/papercolor-theme" }
+    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 end)

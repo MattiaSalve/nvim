@@ -1,7 +1,7 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
-cmp.setup({
 
+cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ["<CR>"] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
@@ -25,5 +25,27 @@ cmp.setup({
                 fallback()
             end
         end, { "i", "s" }),
+        ["<C-k>"] = cmp.mapping({
+            i = function()
+                if cmp.visible() then
+                    require("notify")("not visible")
+                    cmp.complete()
+                end
+            end,
+            c = function()
+                if cmp.visible() then
+                    require("notify")("visible")
+                    cmp.close()
+                else
+                    require("notify")("not visible")
+                    cmp.complete()
+                end
+            end,
+        })
+    }),
+    sources = cmp.config.sources({
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+        { name = "buffer" },
     })
 })

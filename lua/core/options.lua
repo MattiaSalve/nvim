@@ -10,3 +10,7 @@ opt.smartindent = true
 opt.termguicolors = true
 opt.scrolloff = 8
 opt.termguicolors = true
+opt.foldcolumn = "1"
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.foldenable = true
