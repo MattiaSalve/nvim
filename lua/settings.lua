@@ -16,6 +16,6 @@ opt.foldlevelstart = 99
 opt.foldenable = true
 opt.colorcolumn = "90"
 
-vim.cmd [[set clipboard+=unnamedplus]]
+-- vim.cmd [[set clipboard+=unnamedplus]]
 
 g.tex_flavor = "latex"
