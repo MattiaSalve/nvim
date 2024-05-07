@@ -1,8 +1,8 @@
-return{
+return {
     'mfussenegger/nvim-lint',
-    config = function ()
-        require("lint").linters_by_ft = {
-            tex = {"vale"}
+    config = function()
+        require('lint').linters_by_ft = {
+            tex = { 'vale' },
         }
-    end
+    end,
 }

@@ -1,20 +1,20 @@
-return{
+return {
     'zaldih/themery.nvim',
     config = function()
-        require("themery").setup({
+        require('themery').setup {
             themes = {
-                "tokyonight",
+                'tokyonight',
                 {
-                    name = "Kanagawa light",
-                    colorscheme = "kanagawa-lotus",
+                    name = 'Kanagawa light',
+                    colorscheme = 'kanagawa-lotus',
                 },
                 {
-                    name = "Kanagawa dark",
-                    colorscheme = "kanagawa",
-                }
+                    name = 'Kanagawa dark',
+                    colorscheme = 'kanagawa',
+                },
             },
-            themeConfigFile = "~/.config/nvim/lua/colors.lua",
+            themeConfigFile = '~/.config/nvim/lua/colors.lua',
             livePreview = true,
-        })
+        }
     end,
 }

@@ -1,8 +1,5 @@
-return
-{
+return {
     'numToStr/Comment.nvim',
-    opts = {
-    },
+    opts = {},
     lazy = false,
 }
-

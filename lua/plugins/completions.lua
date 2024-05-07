@@ -1,49 +1,48 @@
 return {
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
-    { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
+    { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
     { 'neovim/nvim-lspconfig' },
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'saadparwaiz1/cmp_luasnip' },
     {
         'hrsh7th/nvim-cmp',
-        event = { "InsertEnter", "CmdlineEnter" },
+        event = { 'InsertEnter', 'CmdlineEnter' },
         config = function()
-            local cmp = require("cmp")
-            local luasnip = require("luasnip")
+            local cmp = require 'cmp'
+            local luasnip = require 'luasnip'
 
-            vim.opt.completeopt = "menu,menuone,noselect"
+            vim.opt.completeopt = 'menu,menuone,noselect'
 
-            local lsp_zero = require("lsp-zero")
+            local lsp_zero = require 'lsp-zero'
 
             lsp_zero.on_attach(function(bufnr)
-                lsp_zero.default_keymaps({ buffer = bufnr })
+                lsp_zero.default_keymaps { buffer = bufnr }
             end)
 
-            require("mason").setup({})
-            require("mason-lspconfig").setup({
+            require('mason').setup {}
+            require('mason-lspconfig').setup {
                 ensure_installed = {},
                 handlers = {
                     function(server_name)
-                        require("lspconfig")[server_name].setup({
-                        })
+                        require('lspconfig')[server_name].setup {}
                     end,
                 },
-            })
+            }
 
-            cmp.setup({
+            cmp.setup {
                 snippet = {
                     expand = function(args)
                         luasnip.lsp_expand(args.body)
                     end,
                 },
                 sources = cmp.config.sources {
-                    { name = "nvim_lsp" },
-                    { name = "luasnip" },
-                    { name = "codeium" },
-                    { name = "path" },
-                    { name = "buffer" },
-                    { name = "cmp_r" },
+                    { name = 'nvim_lsp' },
+                    { name = 'luasnip' },
+                    { name = 'codeium' },
+                    { name = 'path' },
+                    { name = 'buffer' },
+                    { name = 'cmp_r' },
                 },
                 mapping = {
                     ['<Tab>'] = cmp.mapping(function(fallback)
@@ -54,7 +53,7 @@ return {
                         else
                             fallback()
                         end
-                    end, { "i", "s" }),
+                    end, { 'i', 's' }),
                     ['<S-Tab>'] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             cmp.select_prev_item()
@@ -63,18 +62,17 @@ return {
                         else
                             fallback()
                         end
-                    end, { "i", "s" }),
-                    ['<CR>'] = cmp.mapping.confirm({
+                    end, { 'i', 's' }),
+                    ['<CR>'] = cmp.mapping.confirm {
                         select = true,
                         behavior = cmp.ConfirmBehavior.Replace,
-                    }),
-
+                    },
                 },
                 window = {
                     completion = cmp.config.window.bordered(),
                     documentation = cmp.config.window.bordered(),
-                }
-            })
+                },
+            }
         end,
     },
 }
