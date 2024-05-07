@@ -10,6 +10,7 @@ return {
                 lua = { 'stylua' },
                 latex = { 'latexindent' },
             },
+
             format_on_save = {
                 lsp_fallback = true,
                 async = false,
@@ -17,7 +18,7 @@ return {
             },
         }
 
-        vim.keymap.set('n, v', '<leader>fo', function()
+        vim.keymap.set({ 'n', 'v' }, '<leader>fo', function()
             conform.format {
                 lsp_fallback = true,
                 async = false,
