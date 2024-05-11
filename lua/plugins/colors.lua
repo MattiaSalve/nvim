@@ -1,11 +1,13 @@
 return {
+    { 'folke/tokyonight.nvim' },
+    { 'Shatur/neovim-ayu', name = 'ayu' },
+    { 'kepano/flexoki-neovim', name = 'flexoki' },
     {
-        'folke/tokyonight.nvim',
-        lazy = false, -- make sure we load this during startup if it is your main colorscheme
-        priority = 1000, -- make sure to load this before all the other start plugins
-        -- config = function()
-        --   vim.cmd([[colorscheme tokyonight]])
-        -- end,
+        'rose-pine/neovim',
+        name = 'rose-pine',
+        config = function()
+            require('rose-pine').setup { variant = 'moon' }
+        end,
     },
     { 'rebelot/kanagawa.nvim' },
 }
