@@ -22,5 +22,25 @@ ls.add_snippets(nil, {
         }, {
             func(date, {}),
         }),
+        s(
+            { trig = 'cmakelist' },
+            fmt(
+                [[cmake_minimum_required(VERSION 3.10)
+                set(CMAKE_CXX_STANDARD 17)
+                set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+                project(main)
+
+                # add_subdirectory(lib)
+                add_library(factorial STATIC lib/<>.cpp)
+                target_include_directories(factorial PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/lib/include)
+
+
+                add_executable(main main.cpp)
+                target_link_libraries(main PUBLIC factorial)]],
+                { i(1) },
+                { delimiters = '<>' }
+            )
+        ),
     },
 })
