@@ -13,5 +13,7 @@ set('n', 'm', '<C-d>')
 set('n', ',', '<C-u>')
 set('n', 'M', 'm')
 
-set('n', '<leader>te', vim.cmd.FloatermNew, { desc = 'Floating terminal window' })
+set('t', '<C-t>', '<C-\\><C-n>:FloatermToggle<CR>')
+
+set('n', '<leader>te', vim.cmd.FloatermToggle, { desc = 'Floating terminal window' })
 set('n', '<leader>th', vim.cmd.Theme, { desc = 'Theme switcher' })

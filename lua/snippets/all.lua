@@ -25,19 +25,20 @@ ls.add_snippets(nil, {
         s(
             { trig = 'cmakelist' },
             fmt(
-                [[cmake_minimum_required(VERSION 3.10)
-                set(CMAKE_CXX_STANDARD 17)
-                set(CMAKE_CXX_STANDARD_REQUIRED ON)
+                [[cmake_minimum_required(VERSION 3.23)
 
-                project(main)
+                    set(CMAKE_TOOLCHAIN_FILE ~/vcpkg/scripts/buildsystems/vcpkg.cmake)
+                    set(CMAKE_CXX_STANDARD 17)
 
-                # add_subdirectory(lib)
-                add_library(factorial STATIC lib/<>.cpp)
-                target_include_directories(factorial PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/lib/include)
+                    project(main)
+                    add_executable(main main.cpp)
 
+                    find_package(jsoncpp CONFIG REQUIRED)
+                    find_package(cpr CONFIG REQUIRED)
 
-                add_executable(main main.cpp)
-                target_link_libraries(main PUBLIC factorial)]],
+                    target_include_directories(main PRIVATE ~/vcpkg/installed/arm64-osx/include/)
+                    target_link_libraries(main PRIVATE JsonCpp::JsonCpp cpr::cpr)
+                    <>]],
                 { i(1) },
                 { delimiters = '<>' }
             )

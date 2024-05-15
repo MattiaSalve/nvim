@@ -20,6 +20,8 @@ return {
                 lsp_zero.default_keymaps { buffer = bufnr }
             end)
 
+            require('lspconfig').clangd.setup {}
+
             require('mason').setup {}
             require('mason-lspconfig').setup {
                 ensure_installed = {},
@@ -27,6 +29,13 @@ return {
                     function(server_name)
                         require('lspconfig')[server_name].setup {}
                     end,
+                },
+                opts = {
+                    servers = {
+                        clangd = {
+                            mason = false,
+                        },
+                    },
                 },
             }
 
@@ -39,7 +48,8 @@ return {
                 sources = cmp.config.sources {
                     { name = 'nvim_lsp' },
                     { name = 'luasnip' },
-                    { name = 'codeium' },
+                    { name = 'copilot' },
+                    -- { name = 'codeium' },
                     { name = 'path' },
                     { name = 'buffer' },
                     { name = 'cmp_r' },
