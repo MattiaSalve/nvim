@@ -17,3 +17,5 @@ set('t', '<C-t>', '<C-\\><C-n>:FloatermToggle<CR>')
 
 set('n', '<leader>te', vim.cmd.FloatermToggle, { desc = 'Floating terminal window' })
 set('n', '<leader>th', vim.cmd.Theme, { desc = 'Theme switcher' })
+
+set('n', '<leader>p', ':Copilot panel<CR>', { desc = 'Show copilot panel' })

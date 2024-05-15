@@ -27,18 +27,18 @@ ls.add_snippets(nil, {
             fmt(
                 [[cmake_minimum_required(VERSION 3.23)
 
-                    set(CMAKE_TOOLCHAIN_FILE ~/vcpkg/scripts/buildsystems/vcpkg.cmake)
-                    set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_TOOLCHAIN_FILE ~/vcpkg/scripts/buildsystems/vcpkg.cmake)
+set(CMAKE_CXX_STANDARD 17)
 
-                    project(main)
-                    add_executable(main main.cpp)
+project(main)
+add_executable(main main.cpp)
 
-                    find_package(jsoncpp CONFIG REQUIRED)
-                    find_package(cpr CONFIG REQUIRED)
+find_package(jsoncpp CONFIG REQUIRED)
+find_package(cpr CONFIG REQUIRED)
 
-                    target_include_directories(main PRIVATE ~/vcpkg/installed/arm64-osx/include/)
-                    target_link_libraries(main PRIVATE JsonCpp::JsonCpp cpr::cpr)
-                    <>]],
+target_include_directories(main PRIVATE ~/vcpkg/installed/arm64-osx/include/)
+target_link_libraries(main PRIVATE JsonCpp::JsonCpp cpr::cpr)
+<>]],
                 { i(1) },
                 { delimiters = '<>' }
             )
