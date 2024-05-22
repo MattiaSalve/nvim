@@ -3,8 +3,12 @@ local g = vim.g
 
 opt.relativenumber = true
 opt.number = true
-opt.foldexpr = 'vimtex#fold#level(v:lnum)'
-opt.foldmethod = 'expr'
+-- opt.foldexpr = 'vimtex#fold#level(v:lnum)'
+-- opt.foldmethod = 'expr'
+opt.foldenable = true
+opt.foldmethod = 'indent'
+opt.foldlevel = 99
+-- opt.foldexpr = 'nvim_treesitter#foldexpr()'
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.softtabstop = 4

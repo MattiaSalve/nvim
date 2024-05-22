@@ -1,5 +1,7 @@
 return {
-    { 'folke/tokyonight.nvim' },
+    {
+        'folke/tokyonight.nvim',
+    },
     { 'Shatur/neovim-ayu', name = 'ayu' },
     { 'kepano/flexoki-neovim', name = 'flexoki' },
     {
