@@ -18,4 +18,10 @@ set('t', '<C-t>', '<C-\\><C-n>:FloatermToggle<CR>')
 set('n', '<leader>te', vim.cmd.FloatermToggle, { desc = 'Floating terminal window' })
 set('n', '<leader>th', vim.cmd.Theme, { desc = 'Theme switcher' })
 
+set('n', '<leader>y', '"+y', { desc = 'Copy to the system clipboard' })
+set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+set('v', ';b', 'di\\textbf{}<Esc>hp', { desc = 'Delete word and write \\textbf{word}' })
+set('v', ';i', 'di\\textit{}<Esc>hp', { desc = 'Delete word and write \\textbf{word}' })
+
 set('n', '<leader>p', ':Copilot panel<CR>', { desc = 'Show copilot panel' })
