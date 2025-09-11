@@ -12,3 +12,8 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 -- Ensure Esc works in insert mode
 vim.keymap.set("i", "<Esc>", "<Esc>", { noremap = true })
+
+-- Show diagnostics in a floating window with <leader>l
+vim.keymap.set("n", "<leader>l", function()
+	vim.diagnostic.open_float(nil, { focus = false, border = "rounded" })
+end, { desc = "Show line diagnostics" })
