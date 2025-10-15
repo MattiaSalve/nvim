@@ -9,7 +9,7 @@ return {
 			conform.setup({
 				formatters_by_ft = {
 					rust = { "rustfmt" },
-					python = { "black" },
+					python = { "autoflake" },
 					lua = { "stylua" },
 					latex = { "latexindent" },
 					cpp = { "clang_format" },
@@ -17,14 +17,16 @@ return {
 				linters_by_ft = {
 					-- Linters by filetype
 					rust = { "cargo_clippy" },
-					python = { "flake8" },
-					lua = { "luacheck" },
+					python = { "autoflake" },
+					lua = { "stylua" },
 					latex = { "chktex" },
 					-- Add more as needed
 				},
 				format_on_save = {
 					-- Enable format on save globally
 					enabled = true,
+					timeout_ms = 500,
+					lsp_format = "fallback",
 					-- You can also specify pattern matching or exclusions
 					allow_filetypes = { "*" },
 				},

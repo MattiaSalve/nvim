@@ -1,5 +1,6 @@
 vim.api.nvim_create_autocmd("BufWritePre", {
-	callback = function()
-		require("conform").format({ async = false })
+	pattern = "*",
+	callback = function(args)
+		require("conform").format({ bufnr = args.buf })
 	end,
 })

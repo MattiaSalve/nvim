@@ -18,4 +18,4 @@ vim.opt.hlsearch = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.mouse = "a"
 
-vim.opt.foldmethod=indent
+
